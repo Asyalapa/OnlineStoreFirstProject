@@ -4,7 +4,10 @@
 
 body {
 	margin: 15px;
-	font-family: Arial, Verdana, sans-serif
+	font-family: Arial, Verdana, sans-serif;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 h1 {
@@ -45,12 +48,6 @@ h2 {
 	display: block;
 	padding-top: 30px;
 	color:  #c5d1df;
-}
-
-.container-setka {
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .image {
