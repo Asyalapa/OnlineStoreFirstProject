@@ -5,14 +5,10 @@
 body {
 	margin: 15px;
 	font-family: Arial, Verdana, sans-serif;
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 h1 {
 	text-align: center;
-	padding-top: 5px;
 	color: #0055bb;
 }
 
