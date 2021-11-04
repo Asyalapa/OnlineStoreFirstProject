@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(253, 247, 238);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: rgb(224, 160, 64);
+}
+
+.header {
+    display: block;
+    position: fixed;
+    white-space: nowrap;
+    border-radius: 5px;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: antiquewhite;
+    z-index: 1;
+}
+
+.header__logo {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.header__title {
+    display: inline-block;
+    align-items: center;
+    vertical-align: top;
+    margin: 0 0 0 5%;
+    color: rgb(224, 160, 64);
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 60px 0 20px;
+    gap: 1em;
+}
+
+.container > *:nth-last-child(1) {
+    flex: 1 1 70%;
+    gap: 1rem;
+}
+
+.container > *:nth-last-child(2) {
+    flex: 1 1 24%;
+    min-width: 150px;
+    gap: 1rem;
+}
+
+.container__aside {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__form {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.container__form-search {
+    min-width: 125px;
+    width: 100%;
+    border-color: rgba(0 0 0 0.1);
+    background-color: antiquewhite;
+}
+
+.container__form-image {
+    max-height: 25px;
+    max-width: 25px;
+}
+
+.container__aside-button {
+    border-color: rgba(0 0 0 0.1);
+    margin: 0;
+    padding: 0;
+    min-height: 100px;
+    width: 100%;
+    background-color: antiquewhite;
+    color: rgb(224, 160, 64);
+}
+
+.container__block {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.container__block-title {
+    position: sticky;
+    top: 50px;
+    margin: 0;
+    height: 35px;
+    width: 100%;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    color: rgb(224, 160, 64);
+}
+
+.container__block-link {
+    background-color: none;
+}
+
+.footer {
+    display: flexbox;
+    position: relative;
+    margin: 0;
+    bottom: 0;
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.footer__block {
+    display: inline-block;
+    align-items: center;
+    margin: 10px 0 0 5%;
+    color: rgb(224, 160, 64);
+}
+
