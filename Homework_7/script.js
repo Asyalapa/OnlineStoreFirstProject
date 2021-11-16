@@ -1,18 +1,28 @@
-'use strict'
+'use strictlet'
+
+let numFromPrompt, mathOperator;
 
 alert (`Вас приветствует программа \'Ущербный калькулятор\'!\nСледуйте указаниям всплывающих окон.`)
 
-let firstNumber = prompt (`Введите первое число \n(любое от -1000 до 1000)\n [для десятичных чисел используйте в качестве разделителя .]`);
+numFromPrompt = prompt (`Введите первое число \n [для десятичных чисел используйте в качестве разделителя .]`);
+exit(numFromPrompt);
+while(!validityCheck(numFromPrompt)) {
+  numFromPrompt = prompt (`Введите первое число`);
+};
+const firstNumber = Number(numFromPrompt);
 
-if ((validityCheck(+firstNumber) == false) || (firstNumber == null) || (firstNumber == NaN)) {
-  firstNumber = prompt (`Введите первое число \n(любое от -1000 до 1000)\n [для десятичных чисел используйте в качестве разделителя .]`)
-} else {
-  firstNumber = +firstNumber
-}
-const mathOperator = prompt (`Какое действие Вы хотите совершить: + - * / ?`)
-const secondNumber = +(prompt (`Введите второе число \n(любое от -1000 до 1000)\n [для десятичных чисел используйте в качестве разделителя .]`))
-if (validityCheck(secondNumber) == false) throw Error();
-let result;
+mathOperator = prompt (`Какое действие Вы хотите совершить: + - * / ?`);
+exit(mathOperator);
+while ((mathOperator != `+`) && (mathOperator != `-`) && (mathOperator != `*`) && (mathOperator != `/`)) {
+  mathOperator = prompt (`Какое действие Вы хотите совершить (из предложенных): + - * / ?`);
+};
+
+numFromPrompt = prompt (`Введите второе число \n [для десятичных чисел используйте в качестве разделителя .]`);
+exit(numFromPrompt);
+while(!validityCheck(numFromPrompt)) {
+  numFromPrompt = prompt (`Введите второе число`);
+};
+const secondNumber = Number(numFromPrompt);
 
 switch (mathOperator) {
   case '+':
@@ -27,18 +37,22 @@ switch (mathOperator) {
   case '/':
     result = firstNumber / secondNumber;
     break;
-  default: {
-    console.log(`Оператор ${mathOperator} мной ещё не поддерживается`);
-    throw Error()
-  }
 }
 
 console.log(`${firstNumber} ${mathOperator} ${secondNumber} = ${result}`)
 
 
-function validityCheck (num) {
-  if (!isNaN(num) && ((num < -1000) || (num > 1000))) {
-    alert (`Программа не поддерживает работу с этим типом данных`);
-    return (false)
-  }
+function validityCheck(num) {
+  if (num == '') {
+    return false;
+  } else if (isFinite(Number(num))) {
+    return true;
+  } else return false;
+};
+
+function exit(num) {
+  if (!num) {
+    let question = confirm ('Вы хотите закрыть приложение?');
+    if (question) throw Error();
+  };
 }
