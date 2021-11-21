@@ -14,25 +14,25 @@
 
 // Вариант 2
 
-function makeFibonacciFunction(firstNumber = 1, secondNumber = 0) {
-  return () => {
-    secondNumber += firstNumber;
-    firstNumber = secondNumber - firstNumber;
-    return secondNumber
-  }
-}
+// function makeFibonacciFunction(firstNumber = 1, secondNumber = 0) {
+//   return () => {
+//     secondNumber += firstNumber;
+//     firstNumber = secondNumber - firstNumber;
+//     return secondNumber
+//   }
+// }
 
-const fibonacci = makeFibonacciFunction();
+// const fibonacci = makeFibonacciFunction();
 
 // Решение со *----------------------------------------------------------
 
-// const fibonacci = (firstNumber = 1, secondNumber = 0) => () => {
-//     secondNumber += firstNumber;
-//     firstNumber = secondNumber - firstNumber;
-//     return secondNumber;
-//   };
+const fibonacci = (firstNumber = 1, secondNumber = 0) => () => {
+    secondNumber += firstNumber;
+    firstNumber = secondNumber - firstNumber;
+    return secondNumber;
+    };
 
 // Вывод в консоль--------------------------------------------------------
 while (confirm('Проведем итерацию?')) {
-  console.log(fibonacci());
+  console.log(fibonacci() );
 }
