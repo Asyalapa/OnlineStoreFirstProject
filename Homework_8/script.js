@@ -22,15 +22,15 @@
 //   }
 // }
 
-// const fibonacci = makeFibonacciFunction();
+// const fibonacci = makeFibonacciFunction()
 
 // Решение со *----------------------------------------------------------
 
-const fibonacci = (firstNumber = 1, secondNumber = 0) => () => {
+const fibonacci = ((firstNumber = 1, secondNumber = 0) => () => {
     secondNumber += firstNumber;
     firstNumber = secondNumber - firstNumber;
     return secondNumber;
-    };
+    })();
 
 // Вывод в консоль--------------------------------------------------------
 while (confirm('Проведем итерацию?')) {
