@@ -1,38 +1,34 @@
 'use strict'
 
-// Решение без *-------------------------------------------------------
+// https://reqres.in/api/users
 
-// Вариант 1
-
-// function makeFibonacciFunction(firstNumber = 1, secondNumber = 0) {
-//   return function сalculatFibonacciNumber() {
-//     secondNumber += firstNumber;
-//     firstNumber = secondNumber - firstNumber;
-//     return secondNumber
-//   }
-// }
-
-// Вариант 2
-
-// function makeFibonacciFunction(firstNumber = 1, secondNumber = 0) {
-//   return () => {
-//     secondNumber += firstNumber;
-//     firstNumber = secondNumber - firstNumber;
-//     return secondNumber
-//   }
-// }
-
-// const fibonacci = makeFibonacciFunction()
-
-// Решение со *----------------------------------------------------------
-
-const fibonacci = ((firstNumber = 1, secondNumber = 0) => () => {
-    secondNumber += firstNumber;
-    firstNumber = secondNumber - firstNumber;
-    return secondNumber;
-    })();
-
-// Вывод в консоль--------------------------------------------------------
-while (confirm('Проведем итерацию?')) {
-  console.log(fibonacci() );
-}
+fetch('https://reqres.in/api/users?per_page=12')
+  .then((response) => {
+    return response.json();
+  })
+  .then((body) => {
+    console.log('Пункт №1:');
+    body?.data.forEach((item) => {
+      console.log(item);
+    });
+    console.log('-----------');
+    console.log('Пункт №2:');
+    body?.data.forEach((item) => {
+      console.log(item.last_name);
+    });
+    console.log('-----------');
+    console.log('Пункт №3:');
+    console.log(body?.data.filter(item => item.last_name[0] === 'F'));
+    console.log('-----------');
+    console.log('Пункт №4:');
+    const result = body?.data.reduce((accumulator, item, index, array) => {
+      if (item.id !== 12) accumulator += item.first_name + ' ' + item.last_name + ', ';
+      else accumulator += item.first_name + ' ' + item.last_name;
+      
+      return accumulator;
+    },'');
+    console.log('Наша база содержит данные следующих пользователей: ', result);
+    console.log('-----------');
+    console.log('Пункт №5:');
+    console.log(`Объект пользователя содержит следующие ключи: ${Object.keys(body?.data['0'])}`);
+  });
