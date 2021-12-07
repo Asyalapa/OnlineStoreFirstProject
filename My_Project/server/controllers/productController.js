@@ -6,7 +6,7 @@ const path = require('path');
 class ProductController {
     async create(req, res, next) {
         try {
-            const {name, price, categoryId, sizeId, info} = req.body
+            let {name, price, categoryId, sizeId, info} = req.body
             const {img} = req.files
             let fileName = uuid.v4() + '.jpg'
             img.mv(path.resolve(__dirname, '..', 'static', fileName))
