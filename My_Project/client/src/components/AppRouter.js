@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Routes, Route} from "react-router-dom";
 import {authRoutes, publicRoutes} from "../routes";
 import FrontPage from "../pages/FrontPage";
+import {Context} from "../index";
 
 const AppRouter = () => {
-    // const isAuth = true
-    const isAuth = false
+    const {user} = useContext(Context)
+
+    console.log(user)
     return (
-        isAuth ?
+        user.isAuth ?
             <Routes>
                 {authRoutes.map(routes =>
                     <Route key={routes.path} path={routes.path} element={<routes.component />} />
