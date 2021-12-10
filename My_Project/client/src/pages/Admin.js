@@ -6,11 +6,7 @@ import Main from "../components/Main";
 const Admin = () => {
     return (
         <div>
-            <NavBar />
-            <Main>
                 Admin
-            </Main>
-            <Footer />
         </div>
     );
 };

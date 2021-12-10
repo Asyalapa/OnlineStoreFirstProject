@@ -6,11 +6,7 @@ import Main from "../components/Main";
 const ProductPage = () => {
     return (
         <div>
-            <NavBar />
-            <Main>
                 Product Page
-            </Main>
-            <Footer />
         </div>
     );
 };

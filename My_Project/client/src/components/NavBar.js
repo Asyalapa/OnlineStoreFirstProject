@@ -1,6 +1,5 @@
-import React,{ useState } from "react";
-// import {useContext} from 'react';
-// import {Context} from "../index";
+import React, {useContext, useState} from "react";
+import {Context} from "../index";
 import '../styles/NavBar.css'
 import {Link} from "react-router-dom";
 import {
@@ -9,25 +8,21 @@ import {
     ARTICLES_ROUTE,
     BASKET_ROUTE,
     INDEX_ROUTE,
-    LOGIN_ROUTE,
+    REG_ROUTE,
     SHOP_ROUTE
 } from "../utils/consts";
 import NavbarButton from "./UI/NavbarButton";
 import NavbarMenu from "./UI/NavbarMenu";
+import {observer} from "mobx-react-lite";
 
-const NavBar = () => {
-    // const {user} = useContext(Context)
+const NavBar = observer(() => {
+    const {user} = useContext(Context)
     const [showMenu, setShowMenu] = useState(false)
     const left_items = [
-        {id: 1, value: `IDEAL${'\u00A0'}матрас`, link: INDEX_ROUTE},
-        {id: 2, value: `О${'\u00A0'}компании`, link: ABOUT_ROUTE},
-        {id: 3, value: `Полезные${'\u00A0'}статьи`, link: ARTICLES_ROUTE},
-        {id: 4, value: `Товары`, link: SHOP_ROUTE}]
-    const right_items = [
-        {id: 1, value: `Корзина`, link: BASKET_ROUTE},
-        {id: 2, value: `Админ${'\u00A0'}панель`, link: ADMIN_ROUTE},
-        {id: 2, value: `Log${'\u00A0'}In`, link: LOGIN_ROUTE}]
-
+        {id: 51, value: `IDEAL${'\u00A0'}матрас`, link: INDEX_ROUTE},
+        {id: 52, value: `О${'\u00A0'}компании`, link: ABOUT_ROUTE},
+        {id: 53, value: `Полезные${'\u00A0'}статьи`, link: ARTICLES_ROUTE},
+        {id: 54, value: `Товары`, link: SHOP_ROUTE}]
     return (
         <div>
             <div className="navbar">
@@ -45,19 +40,27 @@ const NavBar = () => {
                         </div>
                     </div>
                     <div className="navbar__right">
-                        <div className="navbar__baths">{
-                            right_items.map(item =>
-                                <NavbarButton key={item.id}>
-                                    <Link to={item.link} className="navbar__link"> {item.value} </Link>
+                        {user.isAuth ?
+                            <div className="navbar__baths">
+                                <NavbarButton>
+                                    <Link to={BASKET_ROUTE} className="navbar__link"> Корзина </Link>
                                 </NavbarButton>
-                            )}
-                        </div>
+                                <NavbarButton>
+                                    <Link to={ADMIN_ROUTE} className="navbar__link"> Админ панель </Link>
+                                </NavbarButton>
+                            </div>
+                            :
+                            <div className="navbar__baths">
+                                <NavbarButton>
+                                <Link to={REG_ROUTE} className="navbar__link"> Регистрация </Link>
+                                </NavbarButton>
+                            </div>}
                     </div>
                 </div>
             </div>
             <NavbarMenu show={showMenu} setShow={setShowMenu} items={left_items}/>
         </div>
     );
-};
+});
 
 export default NavBar;

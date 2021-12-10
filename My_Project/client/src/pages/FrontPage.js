@@ -7,9 +7,7 @@ import '../styles/App.css'
 const FrontPage = () => {
     return (
         <div>
-            <NavBar />
-            <Main>
-                <section className="main__section">
+             <section className="main__section">
                     <h2 className="main__title">Компания IDEAL&nbsp;матрас</h2>
                     <article className="main__article">Интернет&nbsp;&mdash; магазин IDEAL представляет вашему
                                     вниманию широкий ассортимент матрасов для комфортного сна. Ведь как известно,
@@ -51,8 +49,6 @@ const FrontPage = () => {
                          </li>
                      </ul>
                 </section>
-            </Main>
-            <Footer />
         </div>
     );
 };

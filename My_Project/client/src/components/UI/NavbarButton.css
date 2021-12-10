@@ -15,7 +15,7 @@
     box-shadow: none;
 }
 
-@media only screen and (max-width: 1014px) {
+@media only screen and (max-width: 1069px) {
     .navbar__btn {
         font-size: .75em;
     }

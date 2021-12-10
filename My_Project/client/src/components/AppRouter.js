@@ -13,7 +13,7 @@ const AppRouter = () => {
                 {authRoutes.map(routes =>
                     <Route key={routes.path} path={routes.path} element={<routes.component />} />
                 )}
-                <Route path='*' element={<FrontPage />}/>
+                {/*<Route path='*' element={<FrontPage />}/>*/}
             </Routes>
             :
             <Routes>

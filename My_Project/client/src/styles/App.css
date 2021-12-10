@@ -9,6 +9,11 @@
     height: 100vh;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: rgba(255, 255, 255, 0.0);
+}
+
 .main__section {
     margin-bottom: 3%;
 }
@@ -87,3 +92,4 @@
     background-repeat: no-repeat;
     background-position: 50% 20%;
 }
+

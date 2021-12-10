@@ -6,11 +6,7 @@ import Main from "../components/Main";
 const About = () => {
     return (
         <div>
-            <NavBar />
-            <Main>
                 About
-            </Main>
-            <Footer />
         </div>
     );
 };

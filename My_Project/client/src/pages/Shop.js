@@ -6,11 +6,7 @@ import Main from "../components/Main";
 const Shop = () => {
     return (
         <div>
-            <NavBar />
-            <Main>
                 SHOP PAGE
-            </Main>
-            <Footer />
         </div>
     );
 };
