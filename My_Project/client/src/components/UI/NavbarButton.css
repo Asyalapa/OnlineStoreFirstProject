@@ -1,0 +1,22 @@
+.navbar__btn {
+    margin: 0 10px;
+    padding: .5em 1.5em;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1em;
+    color: #ffeeee;
+    border: 1px solid rgba(255, 238, 238, 0.5);
+    background-color: transparent;
+    border-radius: 15px;
+    box-shadow: 0 0 2px #ffeeee;
+}
+
+.navbar__btn:hover {
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 1014px) {
+    .navbar__btn {
+        font-size: .75em;
+    }
+}

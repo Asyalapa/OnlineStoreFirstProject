@@ -1,5 +1,6 @@
 .navbar {
     position: fixed;
+    top: 0;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgba(235, 112, 107, 0.7);
@@ -9,7 +10,7 @@
 .wrapper {
     display: flex;
     height: 50px;
-    max-width: 1448px;
+    max-width: 1170px;
     margin: 0 auto;
 }
 
@@ -22,6 +23,7 @@
 
 .navbar__left {
     justify-content: flex-start;
+    align-items: center;
 }
 
 .navbar__right {
@@ -29,22 +31,11 @@
 }
 
 .navbar__links,
-.navbar__bths {
+.navbar__baths {
     display: flex;
     max-height: 50px;
     align-items: center;
     list-style-type: none;
-}
-
-.navbar__links-item {
-    margin-left: 10px;
-    padding: .5em 1.5em;
-    font-size: 1em;
-    font-weight: 500;
-    color: #ffeeee;
-    border: 1px solid rgba(255, 238, 238, 0.5);
-    border-radius: 15px;
-    box-shadow: 0 0 2px #ffeeee;
 }
 
 .navbar__link {
@@ -57,22 +48,8 @@
     margin: 0 10px;
 }
 
-.navbar__btn {
-    margin-right: 10px;
-    padding: .5em 1.5em;
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 1em;
-    color: #ffeeee;
-    border: 1px solid rgba(255, 238, 238, 0.5);
-    background-color: transparent;
-    border-radius: 15px;
-    box-shadow: 0 0 2px #ffeeee;
-}
-
 @media only screen and (max-width: 1014px) {
-    .navbar__links-item,
-    .navbar__btn {
+    .navbar__links-item {
         font-size: .75em;
     }
 }
