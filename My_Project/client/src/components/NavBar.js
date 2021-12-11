@@ -13,9 +13,8 @@ import {
 } from "../utils/consts";
 import NavbarButton from "./UI/NavbarButton";
 import NavbarMenu from "./UI/NavbarMenu";
-import {observer} from "mobx-react-lite";
 
-const NavBar = observer(() => {
+const NavBar = () => {
     const {user} = useContext(Context)
     const [showMenu, setShowMenu] = useState(false)
     const left_items = [
@@ -61,6 +60,6 @@ const NavBar = observer(() => {
             <NavbarMenu show={showMenu} setShow={setShowMenu} items={left_items}/>
         </div>
     );
-});
+};
 
 export default NavBar;

@@ -1,12 +1,19 @@
 import React from 'react';
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import Main from "../components/Main";
+import '../styles/App.css'
+import CategoryBar from "../components/CategoryBar";
+import SizeBar from "../components/SizeBar";
+import ProductList from "../components/ProductList";
+import ProductCard from "../components/ProductCard";
 
 const Shop = () => {
     return (
-        <div>
-                SHOP PAGE
+        <div className={'shop_wrapper'}>
+            <section className="shop__product-sizes">
+                <div className="shop__sort">Сортировка</div>
+                <SizeBar />
+            </section>
+            <CategoryBar />
+            <ProductList />
         </div>
     );
 };

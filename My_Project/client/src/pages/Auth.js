@@ -1,11 +1,10 @@
 import React from 'react';
 import '../styles/auth.css'
-import {LOGIN_ROUTE, REG_ROUTE} from "../utils/consts";
 import {Link, useLocation} from "react-router-dom";
 
 const Auth = () => {
     const location = useLocation()
-    const isLogin = location.pathname === LOGIN_ROUTE
+    const isLogin = location.pathname === '/login'
     return (
         <div className={'auth__wrapper'}>
             <form className="form" id="form" noValidate>
@@ -40,16 +39,16 @@ const Auth = () => {
                 </div>
                     {isLogin ?
                         <div className="form__last-group">
-                            <input type="submit" value="Авторизация" className="form__button"/>
+                            <input type="submit" value="Войти" className="form__button"/>
                             <label className="form__checkbox-label">
-                                <Link to={LOGIN_ROUTE}>Нет аккаунта?</Link> Зарегистрируйся!
+                                <Link to={'/registration'}>Нет аккаунта?</Link> Зарегистрируйся!
                             </label>
                         </div>
                         :
                         <div className="form__last-group">
                             <input type="submit" value="Регистрация" className="form__button"/>
                             <label className="form__checkbox-label">
-                                <Link to={REG_ROUTE}>Есть аккаунт?</Link> Войти!
+                                <Link to={'login'}>Есть аккаунт?</Link> Войти!
                             </label>
                         </div>
                     }
