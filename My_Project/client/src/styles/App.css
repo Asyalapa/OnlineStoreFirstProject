@@ -19,19 +19,20 @@
 }
 
 .main__title {
-    margin: 0 0 1em;
+    margin: 0 0 .5em;
     padding-left: 3rem;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 2.5em;
     line-height: 2em;
     color: #0055bb
 }
 
 .main__article {
-    margin: 0;
+    margin: 0 0 .5em;
     max-width: 75%;
-    font-size: 1em;
+    font-size: 1.5em;
     line-height: 200%;
+    text-indent: 1em;
     color: #1f1f1f;
 }
 
@@ -163,6 +164,7 @@
     flex-wrap: wrap;
     flex: 1 1 30%;
     border: 1px solid rgba(0, 0, 0, 1);
+    cursor: pointer;
 }
 
 .shop__card-item {
@@ -172,4 +174,27 @@
     flex-direction: column;
     height: 300px;
     border: 1px solid rgba(255, 0, 0, 1);
+}
+
+.aboutus__making-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.aboutus__making-img {
+    max-width: 150px;
+    height: 100%;
+}
+
+.article__box {
+    flex: 1 1 30%;
+    border: 1px solid rgba(255, 0, 0, 1);
+    cursor: pointer;
+}
+
+.article__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
 }

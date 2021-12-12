@@ -21,7 +21,6 @@ export default class ProductStore {
             {id: 7, name: 'Анталия', price: 6000, rating: 5, img: 'https://ideal-matras.ru/preview/type_h420/files/catalog/product/2018/06/60.png'},
             {id: 8, name: 'Гранд', price: 7000, rating: 5, img: 'https://ideal-matras.ru/preview/type_h420/files/catalog/product/2018/06/60.png'},
             {id: 9, name: 'Латекс', price: 8000, rating: 5, img: 'https://ideal-matras.ru/preview/type_h420/files/catalog/product/2018/06/60.png'},
-            {id: 10, name: 'Орто Х', price: 9000, rating: 5, img: 'https://ideal-matras.ru/preview/type_h420/files/catalog/product/2018/06/60.png'}
         ]
         this._selectedCategories = {}
         this._selectedSizes = {}

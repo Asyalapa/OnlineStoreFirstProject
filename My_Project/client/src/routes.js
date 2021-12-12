@@ -3,7 +3,7 @@ import {ADMIN_ROUTE, BASKET_ROUTE, ARTICLES_ROUTE, INDEX_ROUTE, LOGIN_ROUTE,
     PRODUCT_ROUTE, REG_ROUTE, SHOP_ROUTE, ABOUT_ROUTE} from "./utils/consts";
 import Basket from "./pages/Basket";
 import FrontPage from "./pages/FrontPage";
-import About from "./pages/About";
+import Aboutus from "./pages/Aboutus";
 import Articles from "./pages/Articles";
 import ProductPage from "./pages/ProductPage";
 import Shop from "./pages/Shop";
@@ -27,7 +27,7 @@ export const publicRoutes = [
     },
     {
         path: ABOUT_ROUTE,
-        component: About
+        component: Aboutus
     },
     {
         path: ARTICLES_ROUTE,

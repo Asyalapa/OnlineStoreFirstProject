@@ -7,7 +7,7 @@ const ProductCard = ({product}) => {
     const navigate = useNavigate();
     return (
         <div className="shop__card-items"
-             onClick={() => navigate(PRODUCT_ROUTE + `/` + product.id)}>
+             onClick={() => navigate(PRODUCT_ROUTE + `/${product.id}`)}>
             <div className="shop__card-item">
                 <img className="shop__item-picture" src={''} alt={''}/>
                 <div className="">
