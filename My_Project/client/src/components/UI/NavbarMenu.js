@@ -9,7 +9,9 @@ const NavbarMenu = ({items, show, setShow}) => {
             <ul className='menu__content' onClick={event => event.stopPropagation()}>
                 {items.map(item =>
                 <li className='menu__item' key={item.id}>
-                    <Link to={item.link} className='menu__item-link'>{item.value}</Link>
+                    <Link to={item.link} className='menu__item-link' onClick={() => setShow(false)}>
+                        {item.value}
+                    </Link>
                 </li>
                 )}
             </ul>

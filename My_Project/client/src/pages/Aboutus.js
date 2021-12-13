@@ -1,7 +1,45 @@
 import React from 'react';
 import '../styles/App.css';
+import pro1 from '../img/pro1.jpg';
+import pro2 from '../img/pro2.jpg';
+import pro3 from '../img/pro3.jpg';
+import pro4 from '../img/pro4.jpg';
+import pro5 from '../img/pro5.jpg';
+import pro6 from '../img/pro6.jpg';
+import pro7 from '../img/pro7.jpg';
 
 const Aboutus = () => {
+    const stages = [
+        {   id: 1,
+            img: pro1,
+            name: 'Stage first',
+            description: 'Изготовление блока независимых пружин на\u00A0\специальным дорогостоящем станке. Работа на\u00A0\этом станке требует высокой квалификации оператора.'},
+        {   id: 2,
+            img: pro2,
+            name: 'Stage second',
+            description: 'Сборка основания матраса.'},
+        {   id: 3,
+            img: pro3,
+            name: 'Stage third',
+            description: 'Раскрой материалов требует точности отмера и\u00A0\отреза.'},
+        {   id: 4,
+            img: pro4,
+            name: 'Stage fourth',
+            description: 'Заготовки оснований матрасов, осталось упаковать в\u00A0\чехол и\u00A0\обшить кромку.'},
+        {   id: 5,
+            img: pro5,
+            name: 'Stage fifth',
+            description: 'Пошив чехлов для матрасов.'},
+        {   id: 6,
+            img: pro6,
+            name: 'Stage sixth',
+            description: 'Обшиваем кромку, для этого требуется специальная швейная машина, участок раскроя материала и\u00A0\сборки матрасов.'},
+        {   id: 7,
+            img: pro7,
+            name: 'Stage seventh',
+            description: 'Склад готовой продукции, упаковка и\u00A0\отправка покупателю.'},
+    ]
+
     return (
         <div>
             <h2 className="main__title">О&nbsp;компании</h2>
@@ -23,62 +61,19 @@ const Aboutus = () => {
             </article>
             <h2 className="main__title">Этапы&nbsp;производства</h2>
             <ul className="aboutus__making-list">
-                <li className="main__list-item-popular">
-                    <figure className="aboutus__making-item">
-                        <img src="../img/pro1.jpg" alt="" className="aboutus__making-img"/>
-                        <figcaption className="aboutus__making-desc">
-                            Изготовление блока независимых пружин на&nbsp;специальным дорогостоящем станке. Работа на&nbsp;этом станке требует высокой квалификации оператора.
-                        </figcaption>
-                    </figure>
-                </li>
-                <li className="main__list-item-popular">
-                    <figure className="aboutus__making-item">
-                        <img src="../img/pro2.jpg" alt="" className="aboutus__making-img"/>
-                        <figcaption className="aboutus__making-desc">
-                            Сборка основания матраса.
-                        </figcaption>
-                    </figure>
-                </li>
-                <li className="main__list-item-popular">
-                    <figure className="aboutus__making-item">
-                        <img src="../img/pro3.jpg" alt="" className="aboutus__making-img"/>
-                        <figcaption className="aboutus__making-desc">
-                            Раскрой материалов требует точности отмера и&nbsp;отреза.
-                        </figcaption>
-                    </figure>
-                </li>
-                <li className="main__list-item-popular">
-                    <figure className="aboutus__making-item">
-                        <img src="../img/pro4.jpg" alt="" className="aboutus__making-img"/>
-                        <figcaption className="aboutus__making-desc">
-                            Заготовки оснований матрасов, осталось упаковать в&nbsp;чехол и&nbsp;обшить кромку.
-                        </figcaption>
-                    </figure>
-                </li>
-                <li className="main__list-item-popular">
-                    <figure className="aboutus__making-item">
-                        <img src="../img/pro5.jpg" alt="" className="aboutus__making-img"/>
-                        <figcaption className="aboutus__making-desc">
-                            Пошив чехлов для матрасов.
-                        </figcaption>
-                    </figure>
-                </li>
-                <li className="main__list-item-popular">
-                    <figure className="aboutus__making-item">
-                        <img src="../img/pro6.jpg" alt="" className="aboutus__making-img"/>
-                        <figcaption className="aboutus__making-desc">
-                            Обшиваем кромку, для этого требуется специальная швейная машина, участок раскроя материала и&nbsp;сборки матрасов.
-                        </figcaption>
-                    </figure>
-                </li>
-                <li className="main__list-item-popular">
-                    <figure className="aboutus__making-item">
-                        <img src="../img/pro7.jpg" alt="" className="aboutus__making-img"/>
-                        <figcaption className="aboutus__making-desc">
-                            Склад готовой продукции&nbsp;&mdash; упаковка и&nbsp;отправка покупателю.
-                        </figcaption>
-                    </figure>
-                </li>
+                {
+                    stages.map(item => {
+                        return (
+                            <li className="main__list-item-popular" key={item.id}>
+                                <figure className="aboutus__making-item">
+                                    <img src={item.img} alt={item.name} className="aboutus__making-img"/>
+                                        <figcaption className="aboutus__making-desc">
+                                            {item.description}
+                                        </figcaption>
+                                    </figure>
+                            </li>)
+                    })
+                }
             </ul>
         </div>
     );
